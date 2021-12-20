@@ -1,0 +1,57 @@
+def menu():
+    library=["HarryPotter,Supper Mario,Twilight,Alone,spiderman,The Ghost,Sinderella,The Secret,Marc Docel,Fifty Shape,Take another chance"]
+    staff= staff()
+    while done == false:
+
+        print("""::::::::::::::
+        :::::::::::LIBRARY SYSTEM DONE BY CJV:::::::::::::::::::::::::::::
+        1.Display all books
+        2.Request a book
+        3.Return a book
+        4.exis""")
+        option= int(input("enter ur choice:"))
+        
+        if option ==1:
+            library.Availablebooks()
+        elif option==2:
+            library.lendbook(staff.requestbook)
+        elif option==3:
+            library.returnbook(staff.returnbook)
+        else:
+     
+            print("exit")
+    menu()
+
+
+
+
+class library:
+    def __init__ (self,listofbook):
+        self.availablebooks=listofbook
+
+    def Availablebooks(self):
+        print("book is in our library:")
+        for book in self.availablebooks:
+             print("Book")
+    
+    def lendbook(self,requestedbook):
+        if requestedbook in self.Availablebooks:
+            print("you borrowed it")
+        else:
+            print("book is not availble in our library at the moment")
+
+
+class staff:
+    def requestbook(self):
+        print("enter name of the book you like to have:")
+        self.book=input()
+        return self.book
+    
+    def returnbook(self):
+        print("enter the book you would like to return : ")
+        self.book=input()
+        return self.book
+
+    
+
+
